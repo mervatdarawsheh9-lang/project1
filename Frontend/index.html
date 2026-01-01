@@ -8,7 +8,6 @@
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
 <style>
 body {
@@ -22,6 +21,15 @@ body {
 .feature-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.plant-id-link,
+.plant-id-link:hover,
+.plant-id-link:active,
+.plant-id-link:visited {
+  color: inherit ;
+  text-decoration: none ;
 }
 
 /* Home */
@@ -72,10 +80,10 @@ footer {
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 
         <li class="nav-item ms-3">
-      <span class="nav-link">
-        <i class="bi bi-globe"></i> AR | EN
-      </span>
-      </li>
+          <span class="nav-link">
+            <i class="bi bi-globe"></i> AR | EN
+          </span>
+        </li>
 
       </ul>
     </div>
@@ -87,45 +95,53 @@ footer {
   <div class="container">
     <h1 class="fw-bold">Welcome to the world of plants!</h1>
     <p class="lead">An all-in-one platform to identify plants, explore their varieties, and their care </p>
-   <div class="input-group w-50 mx-auto">
-  <span class="input-group-text">
-    <i class="bi bi-search text-secondary"></i>
-  </span>
-  <input id="searchInput"
-         type="text"
-         class="form-control"
-         placeholder="Search for a plant..."
-         onkeyup="searchPlant()">
-</div>
+    <div class="input-group w-50 mx-auto">
+      <span class="input-group-text">
+        <i class="bi bi-search text-secondary"></i>
+      </span>
+      <input id="searchInput"
+             type="text"
+             class="form-control"
+             placeholder="Search for a plant..."
+             onkeyup="searchPlant()">
+    </div>
   </div>
 </section>
 
-<!-- Features -->
+
 <section class="py-5 text-center">
   <div class="container">
     <h2 class="section-title">What Makes MyPlant Special</h2>
-           <a href="reminder.html" class="text-decoration-none text-dark">
-    <div class="row g-4">
+    <div class="row g-4 justify-content-center">
+      <!-- Reminder System - يسار -->
       <div class="col-md-4">
-        <div class="card shadow-sm h-100 feature-card">
-          <div class="card-body">
-            <h5><i class="bi bi-clock-fill"></i> Reminder System</h5>
-            <p>Set reminders for watering, and receive timely notifications for your plants to stay healthy.</p>
+        <a href="reminder.html" class="text-decoration-none text-dark">
+          <div class="card shadow-sm h-100 feature-card">
+            <div class="card-body">
+              <h5><i class="bi bi-clock-fill"></i> Reminder System</h5>
+              <p>Set reminders for watering, and receive timely notifications for your plants to stay healthy.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100 feature-card">
-          <div class="card-body">
-            <h5><i class="bi bi-camera"></i> Plant Identification</h5>
-            <p>Not sure what plant it is? Use AI to identify it quickly and get information about it</p>
+      
+     
+      <div class="col-md-4 mx-auto">
+        <a href="plantAi.html" class="plant-id-link">
+          <div class="card shadow-sm h-100 feature-card">
+            <div class="card-body">
+              <h5><i class="bi bi-camera"></i> Plant Identification</h5>
+              <p>Not sure what plant it is? Use AI to identify it quickly and get information about it</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
+      
+      <!-- Weather - يمين -->
       <div class="col-md-4">
         <div class="card shadow-sm h-100 feature-card">
           <div class="card-body">
-            <h5><i class="bi bi-cloud-fill"></i> Weather </h5>
+            <h5><i class="bi bi-cloud-fill"></i> Weather</h5>
             <p>Check the weather near you to adjust watering and care routines , especially on hot, rainy, or windy days.</p>
           </div>
         </div>
@@ -171,13 +187,13 @@ footer {
         </div>
       </div>
 
-  </div>
+    </div>
     <div class="text-end mt-4">
-      <a href="plants.html" class="text-decoration-none text-dark fw-bold more-link">
-      See more plants
-      <i class="bi bi-arrow-right-circle-fill ms-2 text-success fs-4"></i>
-       </a>
-     </div>
+      <a href="#" class="text-decoration-none text-dark fw-bold more-link">
+        See more plants
+        <i class="bi bi-arrow-right-circle-fill ms-2 text-success fs-4"></i>
+      </a>
+    </div>
 
   </div>
 </section>
@@ -189,7 +205,7 @@ footer {
     <div class="row g-4">
 
       <div class="col-md-6">
-       <div class="card h-100 shadow-sm feature-card">
+        <div class="card h-100 shadow-sm feature-card">
           <div class="card-body">
             <h5><i class="bi bi-virus"></i> Infectious Diseases</h5>
             <p>
@@ -220,8 +236,8 @@ footer {
     <h2 class="section-title">About MyPlant</h2>
     <p>
       MyPlant is a simple and user-friendly platform designed to help plant lovers identify plants, understand their diseases, and learn the best care practices.
-Our goal is to make plant care easier by providing useful information such as plant identification, weather-based tips, reminders, and disease awareness.
-This project was developed as an educational frontend project, focusing on clean design, usability, and accessibility, using modern web technologies to create an enjoyable learning experience..
+      Our goal is to make plant care easier by providing useful information such as plant identification, weather-based tips, reminders, and disease awareness.
+      This project was developed as an educational frontend project, focusing on clean design, usability, and accessibility, using modern web technologies to create an enjoyable learning experience.
     </p>
   </div>
 </section>
