@@ -7,14 +7,25 @@
 
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
 <style>
 body {
   font-family: Arial, sans-serif;
 }
+.feature-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
-/* Hero */
-.hero {
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Home */
+.home {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
   url("images/background.jpeg") center/cover;
   height: 70vh;
@@ -28,6 +39,7 @@ body {
 
 .card img {
   height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -48,7 +60,7 @@ footer {
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold text-success">🌱 MyPlant</a>
+    <a class="navbar-brand fw-bold text-success"> MyPlant <i class="bi bi-leaf-fill text-success"></i></a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,17 +70,33 @@ footer {
         <li class="nav-item"><a class="nav-link" href="#plants">Plants</a></li>
         <li class="nav-item"><a class="nav-link" href="#diseases">Diseases</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+
+        <li class="nav-item ms-3">
+      <span class="nav-link">
+        <i class="bi bi-globe"></i> AR | EN
+      </span>
+      </li>
+
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero -->
-<section id="home" class="hero d-flex align-items-center text-center">
+<!-- Home -->
+<section id="home" class="home d-flex align-items-center text-center">
   <div class="container">
     <h1 class="fw-bold">Welcome to the world of plants!</h1>
-    <p class="lead">Your botanist in your pocket 🌿</p>
-    <input id="searchInput" class="form-control w-50 mx-auto" placeholder="Search for a plant..." onkeyup="searchPlant()">
+    <p class="lead">An all-in-one platform to identify plants, explore their varieties, and their care </p>
+   <div class="input-group w-50 mx-auto">
+  <span class="input-group-text">
+    <i class="bi bi-search text-secondary"></i>
+  </span>
+  <input id="searchInput"
+         type="text"
+         class="form-control"
+         placeholder="Search for a plant..."
+         onkeyup="searchPlant()">
+</div>
   </div>
 </section>
 
@@ -76,28 +104,29 @@ footer {
 <section class="py-5 text-center">
   <div class="container">
     <h2 class="section-title">What Makes MyPlant Special</h2>
+           <a href="reminder.html" class="text-decoration-none text-dark">
     <div class="row g-4">
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+        <div class="card shadow-sm h-100 feature-card">
           <div class="card-body">
-            <h5>⏰ Reminder System</h5>
-            <p>Set watering & care reminders.</p>
+            <h5><i class="bi bi-clock-fill"></i> Reminder System</h5>
+            <p>Set reminders for watering, and receive timely notifications for your plants to stay healthy.</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+        <div class="card shadow-sm h-100 feature-card">
           <div class="card-body">
-            <h5>📷 AI Identification</h5>
-            <p>Identify plants using AI.</p>
+            <h5><i class="bi bi-camera"></i> Plant Identification</h5>
+            <p>Not sure what plant it is? Use AI to identify it quickly and get information about it</p>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card shadow-sm h-100">
+        <div class="card shadow-sm h-100 feature-card">
           <div class="card-body">
-            <h5>🌦 Weather Alerts</h5>
-            <p>Weather-based care tips.</p>
+            <h5><i class="bi bi-cloud-fill"></i> Weather </h5>
+            <p>Check the weather near you to adjust watering and care routines , especially on hot, rainy, or windy days.</p>
           </div>
         </div>
       </div>
@@ -114,7 +143,7 @@ footer {
 
       <div class="col-md-4 plant-card">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1593691509543-c55fb32f25db">
+          <img src="images/snackplant.jpg">
           <div class="card-body text-center">
             <h6>Snake Plant</h6>
             <small>Sansevieria</small>
@@ -124,7 +153,7 @@ footer {
 
       <div class="col-md-4 plant-card">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b">
+          <img src="images/Pothosplant.jpg">
           <div class="card-body text-center">
             <h6>Pothos</h6>
             <small>Epipremnum aureum</small>
@@ -134,15 +163,22 @@ footer {
 
       <div class="col-md-4 plant-card">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1587502536263-9298bcd18a75">
+          <img src="images/Spider Plant.jpg">
           <div class="card-body text-center">
-            <h6>Mint</h6>
-            <small>Mentha</small>
+            <h6>Spider Plant</h6>
+            <small> Chlorophytum comosum</small>
           </div>
         </div>
       </div>
 
-    </div>
+  </div>
+    <div class="text-end mt-4">
+      <a href="plants.html" class="text-decoration-none text-dark fw-bold more-link">
+      See more plants
+      <i class="bi bi-arrow-right-circle-fill ms-2 text-success fs-4"></i>
+       </a>
+     </div>
+
   </div>
 </section>
 
@@ -153,24 +189,22 @@ footer {
     <div class="row g-4">
 
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
+       <div class="card h-100 shadow-sm feature-card">
           <div class="card-body">
-            <h5>🦠 Infectious Diseases</h5>
+            <h5><i class="bi bi-virus"></i> Infectious Diseases</h5>
             <p>
               Caused by bacteria, fungi or viruses.<br>
-              مثال: Fungal leaf spots (بقع فطرية)
             </p>
           </div>
         </div>
       </div>
 
       <div class="col-md-6">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm feature-card">
           <div class="card-body">
-            <h5>⚠️ Non-Infectious Diseases</h5>
+            <h5><i class="bi bi-exclamation-circle-fill"></i> Non-Infectious Diseases</h5>
             <p>
               Caused by environment or nutrition issues.<br>
-              مثال: Nutrient deficiency (نقص العناصر)
             </p>
           </div>
         </div>
@@ -185,16 +219,17 @@ footer {
   <div class="container">
     <h2 class="section-title">About MyPlant</h2>
     <p>
-      MyPlant is a student project designed to help users identify plants,
-      understand diseases and get proper care advice easily.
+      MyPlant is a simple and user-friendly platform designed to help plant lovers identify plants, understand their diseases, and learn the best care practices.
+Our goal is to make plant care easier by providing useful information such as plant identification, weather-based tips, reminders, and disease awareness.
+This project was developed as an educational frontend project, focusing on clean design, usability, and accessibility, using modern web technologies to create an enjoyable learning experience..
     </p>
   </div>
 </section>
 
 <!-- Footer -->
 <footer class="text-center py-4">
-  <p class="mb-1">🌱 MyPlant – Botanist in your pocket</p>
-  <small>© 2025 Student Project</small>
+  <p class="mb-1"> MyPlant – Botanist in your pocket</p>
+  <small>© 2025 MyPlant . All rights reserved</small>
 </footer>
 
 <!-- Bootstrap JS -->
