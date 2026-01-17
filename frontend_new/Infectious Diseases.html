@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Infectious Diseases</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f0f8f0;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  color: #2e7d32;
+  margin-bottom: 40px;
+}
+
+.img-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 20px 0;
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+}
+
+.disease-img {
+  width: 380px;
+  height: 250px;
+  border-radius: 15px;
+  animation: slideLeft 10s infinite linear;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  flex-shrink: 0;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1140px); }
+}
+
+.descriptions {
+  max-width: 1200px;
+  margin: 40px auto;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.desc-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 300px;
+  border-left: 5px solid #d32f2f;
+}
+
+.desc-title {
+  color: #d32f2f;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.desc-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+.back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #2e7d32;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back:hover {
+  background: #1b5e20;
+}
+
+@media (max-width: 1400px) {
+  .disease-img {
+    width: 330px;
+    height: 220px;
+    animation: slideLeft 9s infinite linear;
+  }
+  @keyframes slideLeft {
+    100% { transform: translateX(-990px); }
+  }
+  
+  .descriptions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<a href="ttt.html" class="back">Back</a>
+
+<h1>Infectious Diseases</h1>
+
+<div class="img-container">
+  <img src="download.webp" class="disease-img" alt="Disease 1">
+  <img src="download (1).webp" class="disease-img" alt="Disease 2">
+  <img src="download (2).webp" class="disease-img" alt="Disease 3">
+  <img src="download.webp" class="disease-img" alt="Disease 1">
+  <img src="download (1).webp" class="disease-img" alt="Disease 2">
+  <img src="download (2).webp" class="disease-img" alt="Disease 3">
+</div>
+
+<div class="descriptions">
+  <div class="desc-card">
+    <h3 class="desc-title">1. Black Spot Fungus</h3>
+    <p class="desc-text">Fungal disease causing circular black spots on rose leaves. Thrives in high humidity, leads to leaf drop. Treatment: Fungicides and pruning infected leaves.</p>
+  </div>
+  
+  <div class="desc-card">
+    <h3 class="desc-title">2. Rust Disease</h3>
+    <p class="desc-text">Orange powdery fungal infection on leaves. Spreads by wind and tools. Reduces photosynthesis. Treatment: Improve air circulation and fungicides.</p>
+  </div>
+  
+  <div class="desc-card">
+    <h3 class="desc-title">3. Bacterial Leaf Spot</h3>
+    <p class="desc-text">Small water-soaked spots turning brown. Spreads by water splash. Causes leaf holes. Treatment: Copper sprays and good ventilation.</p>
+  </div>
+</div>
+
+</body>
+</html>

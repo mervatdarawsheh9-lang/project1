@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Alerts</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: white;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+    h2, h3 {
+      text-align: center;
+      color: rgb(19, 106, 3);
+    }
+    .card {
+      border: 2px solid rgb(19, 106, 3);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: rgb(19, 106, 3);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .list {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .alert-item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .time {
+      font-weight: bold;
+      color: rgb(19, 106, 3);
+    }
+    .delete-btn {
+      width: 120px;        
+      background-color: #dc3545;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .empty {
+      text-align: center;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Daily Alerts</h2>
+
+  <div class="card">
+    <label>Alarm Time</label>
+    <input type="time" id="alertTime" value="08:00">
+
+    <label>Alert Message</label>
+    <textarea id="alertMessage" placeholder="What should we remind you about?..."></textarea>
+
+    <button onclick="addAlert()">Add Alert</button>
+  </div>
+
+  <h3>Added Alerts</h3>
+  <div class="list" id="alertsList"></div>
+</div>
+
+<script>
+
+  var alerts = JSON.parse(localStorage.getItem("alerts")) || [];
+
+  function save() {
+    localStorage.setItem("alerts", JSON.stringify(alerts));
+  }
+  function addAlert() {
+    var time = document.getElementById("alertTime").value;
+    var message = document.getElementById("alertMessage").value;
+
+    if (time === "" || message === "") {
+      window.alert("Please fill all fields");
+      return;
+    }
+    alerts.push({
+      time: time,
+      message: message
+    });
+
+    save();
+    showAlerts();
+    document.getElementById("alertMessage").value = "";
+    window.alert("Alert added successfully");
+  }
+  function showAlerts() {
+    var list = document.getElementById("alertsList");
+    list.innerHTML = "";
+
+    if (alerts.length === 0) {
+      list.innerHTML = "<div class='empty'>No alerts added</div>";
+      return;
+    }
+
+    for (var i = 0; i < alerts.length; i++) {
+      var div = document.createElement("div");
+      div.className = "alert-item";
+
+      div.innerHTML =
+        "<div>" +
+          "<div class='time'> " + alerts[i].time + "</div>" +
+          "<div>" + alerts[i].message + "</div>" +
+        "</div>" +
+        "<button class='delete-btn' onclick='deleteAlert(" + i + ")'>Delete</button>";
+
+      list.appendChild(div);
+    }
+  }
+  function deleteAlert(index) {
+    alerts.splice(index, 1);
+    save();
+    showAlerts();
+  }
+  function playSound() {
+    try {
+      var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      var oscillator = audioContext.createOscillator();
+      var gainNode = audioContext.createGain();
+
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+
+      oscillator.frequency.value = 800; // sound frequency
+      gainNode.gain.value = 0.3;        // volume
+
+      oscillator.start();
+      setTimeout(function () {
+        oscillator.stop();
+      }, 700);
+    } catch (e) {
+      console.log("Audio not supported");
+    }
+  }
+  function checkAlerts() {
+    var now = new Date();
+    var hours = String(now.getHours()).padStart(2, "0");
+    var minutes = String(now.getMinutes()).padStart(2, "0");
+    var currentTime = hours + ":" + minutes;
+
+    for (var i = 0; i < alerts.length; i++) {
+      if (alerts[i].time === currentTime) {
+        playSound();
+        alert(" Alert: " + alerts[i].message);
+      }
+    }
+  }
+  showAlerts();
+  setInterval(checkAlerts, 60000); // window.setInterval
+</script>
+
+</body>
+</html>
