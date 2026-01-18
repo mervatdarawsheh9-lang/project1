@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <title>Daily Alerts</title>
@@ -184,8 +184,12 @@
       }
     }
   }
-  showAlerts();
-  setInterval(checkAlerts, 60000); // window.setInterval
+
+showAlerts();
+checkAlerts(); // run immediately once
+
+setInterval(checkAlerts, 30000);
+
 </script>
 
 </body>
