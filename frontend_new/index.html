@@ -62,6 +62,153 @@
       background-color: #2e7d32;
       color: white;
     }
+    .community-section {
+  background: linear-gradient(135deg, #f6fff6, #edf7ef);
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #eaf7e8;
+  color: #136a03;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.community-title {
+  font-weight: 800;
+  color: #1f2d1f;
+  font-size: 36px;
+  letter-spacing: 1px;
+}
+
+.community-subtitle {
+  max-width: 720px;
+  margin: 12px auto 0;
+  color: #666;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.community-info-card,
+.community-form-card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 30px;
+  border: 1px solid #dfeadf;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.community-icon {
+  width: 75px;
+  height: 75px;
+  border-radius: 22px;
+  background-color: #eaf7e8;
+  color: #136a03;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.community-info-card h3,
+.community-form-card h3 {
+  color: #136a03;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.community-info-card p,
+.form-note {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.community-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.community-feature i {
+  color: #136a03;
+}
+
+.community-whatsapp-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 18px;
+  background-color: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.community-whatsapp-btn:hover {
+  background-color: #1ebe5d;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.25);
+}
+
+.community-form-card .form-control,
+.community-form-card .form-select {
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid #cfd8d1;
+}
+
+.community-form-card .form-control:focus,
+.community-form-card .form-select:focus {
+  border-color: #136a03;
+  box-shadow: 0 0 0 0.2rem rgba(19, 106, 3, 0.15);
+}
+
+.community-form-card textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.community-send-btn {
+  background-color: #136a03;
+  color: white;
+  border-radius: 14px;
+  padding: 13px;
+  font-weight: 800;
+  border: none;
+  transition: 0.3s;
+}
+
+.community-send-btn:hover {
+  background-color: #0d4f02;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(19, 106, 3, 0.25);
+}
+
+@media (max-width: 768px) {
+  .community-title {
+    font-size: 28px;
+  }
+
+  .community-info-card,
+  .community-form-card {
+    padding: 22px;
+  }
+}
+
   </style>
 </head>
 
@@ -79,7 +226,11 @@
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#plants">Plants</a></li>
           <li class="nav-item"><a class="nav-link" href="#diseases">Diseases</a></li>
+          <li class="nav-item">
+             <a class="nav-link" href="community.html">Community</a>
+          </li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+
 
           <li class="nav-item ms-3">
             <span class="nav-link">
@@ -117,7 +268,7 @@
           <a href="reminder.html" class="text-decoration-none text-dark">
             <div class="card shadow-sm h-100 feature-card">
               <div class="card-body">
-                <h5><i class="bi bi-clock-fill"></i> Reminder System</h5>
+                <h5><i class="bi bi-clock-fill"></i> Care Time</h5>
                 <p>Set reminders for watering, and receive timely notifications for your plants to stay healthy.</p>
               </div>
             </div>
@@ -233,6 +384,123 @@
       </div>
     </div>
   </section>
+     
+
+<!-- Community Section -->
+<section id="community" class="community-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-badge">
+        <i class="bi bi-people-fill"></i>
+        Plant Community
+      </span>
+
+      <h2 class="community-title mt-3">Join Our Plant Community</h2>
+
+      <p class="community-subtitle">
+        Connect with plant lovers, ask questions, share your plant problems,
+        and get support through WhatsApp.
+      </p>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-5">
+        <div class="community-info-card h-100">
+          <div class="community-icon">
+            <i class="bi bi-whatsapp"></i>
+          </div>
+
+          <h3>Grow Together 🌿</h3>
+
+          <p>
+            Our community helps users discuss plant care, diseases,
+            watering schedules, sunlight needs, and daily plant tips.
+          </p>
+
+          <div class="community-feature">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Ask about plant diseases and care tips</span>
+          </div>
+
+          <div class="community-feature">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Share your plant photos with others</span>
+          </div>
+
+          <div class="community-feature">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Get help directly through WhatsApp</span>
+          </div>
+
+          <a 
+            href="https://chat.whatsapp.com/LKi8ZYCj5CnLATSdWQ9Awg"
+            target="_blank"
+            class="community-whatsapp-btn"
+          >
+            <i class="bi bi-whatsapp"></i>
+            Join WhatsApp Group
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="community-form-card h-100">
+          <h3>Contact Community Admin</h3>
+          <p class="form-note">
+            Fill the form and send your question directly on WhatsApp.
+          </p>
+
+          <div class="mb-3">
+            <label for="communityName" class="form-label">Your Name</label>
+            <input 
+              type="text" 
+              id="communityName" 
+              class="form-control" 
+              placeholder="Enter your name"
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="communityPlant" class="form-label">Plant Type</label>
+            <input 
+              type="text" 
+              id="communityPlant" 
+              class="form-control" 
+              placeholder="Example: Rose, Mint, Cactus..."
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="communityProblem" class="form-label">Problem Type</label>
+            <select id="communityProblem" class="form-select">
+              <option value="">Choose a problem</option>
+              <option value="Watering problem">Watering problem</option>
+              <option value="Yellow leaves">Yellow leaves</option>
+              <option value="Plant disease">Plant disease</option>
+              <option value="Sunlight issue">Sunlight issue</option>
+              <option value="Soil or fertilizer problem">Soil or fertilizer problem</option>
+              <option value="General question">General question</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="communityMessage" class="form-label">Your Message</label>
+            <textarea 
+              id="communityMessage" 
+              class="form-control" 
+              placeholder="Describe your plant problem..."
+            ></textarea>
+          </div>
+
+          <button class="btn community-send-btn w-100" onclick="sendCommunityWhatsApp()">
+            <i class="bi bi-whatsapp"></i>
+            Send via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   <!-- About -->
@@ -268,7 +536,32 @@
         let text = plants[i].innerText.toLowerCase();
         plants[i].style.display = text.includes(input) ? "block" : "none";
       }
+
+     function sendCommunityWhatsApp() {
+    var name = document.getElementById("communityName").value.trim();
+    var plant = document.getElementById("communityPlant").value.trim();
+    var problem = document.getElementById("communityProblem").value;
+    var message = document.getElementById("communityMessage").value.trim();
+
+    if (name === "" || plant === "" || problem === "" || message === "") {
+      alert("Please fill all community fields");
+      return;
     }
+
+    var phoneNumber = "962789666693";
+
+    var whatsappMessage =
+      "Hello Plant Community Admin,%0A%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Plant Type: " + encodeURIComponent(plant) + "%0A" +
+      "Problem Type: " + encodeURIComponent(problem) + "%0A%0A" +
+      "Message:%0A" + encodeURIComponent(message);
+
+    var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+    window.open(whatsappURL, "_blank");
+  }
+}
   </script>
 
 </body>
