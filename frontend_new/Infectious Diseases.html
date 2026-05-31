@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Infectious Diseases</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
 body {
   margin: 0;
@@ -107,9 +108,19 @@ h1 {
 </head>
 <body>
 
-<a href="ttt.html" class="back">Back</a>
+<!-- Navbar -->
+<nav style="background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+  <a href="index.html" style="color: #2e7d32; text-decoration: none; font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 8px;">
+    MyPlant <i class="bi bi-leaf-fill" style="color: #2e7d32;"></i>
+  </a>
+  <a href="javascript:void(0)" data-lang-toggle style="cursor: pointer; color: #2e7d32; text-decoration: none; font-weight: 600;">
+    🌐 AR | EN
+  </a>
+</nav>
 
-<h1>Infectious Diseases</h1>
+<a href="index.html" class="back" data-translate="back-btn">Back</a>
+
+<h1 data-translate="infectious-diseases">Infectious Diseases</h1>
 
 <div class="img-container">
   <img src="download.webp" class="disease-img" alt="Disease 1">
@@ -122,20 +133,23 @@ h1 {
 
 <div class="descriptions">
   <div class="desc-card">
-    <h3 class="desc-title">1. Black Spot Fungus</h3>
-    <p class="desc-text">Fungal disease causing circular black spots on rose leaves. Thrives in high humidity, leads to leaf drop. Treatment: Fungicides and pruning infected leaves.</p>
+    <h3 class="desc-title" data-translate="black-spot-title">1. Black Spot Fungus</h3>
+    <p class="desc-text" data-translate="black-spot-desc">Fungal disease causing circular black spots on rose leaves. Thrives in high humidity, leads to leaf drop. Treatment: Fungicides and pruning infected leaves.</p>
   </div>
   
   <div class="desc-card">
-    <h3 class="desc-title">2. Rust Disease</h3>
-    <p class="desc-text">Orange powdery fungal infection on leaves. Spreads by wind and tools. Reduces photosynthesis. Treatment: Improve air circulation and fungicides.</p>
+    <h3 class="desc-title" data-translate="rust-disease-title">2. Rust Disease</h3>
+    <p class="desc-text" data-translate="rust-disease-desc">Orange powdery fungal infection on leaves. Spreads by wind and tools. Reduces photosynthesis. Treatment: Improve air circulation and fungicides.</p>
   </div>
   
   <div class="desc-card">
-    <h3 class="desc-title">3. Bacterial Leaf Spot</h3>
-    <p class="desc-text">Small water-soaked spots turning brown. Spreads by water splash. Causes leaf holes. Treatment: Copper sprays and good ventilation.</p>
+    <h3 class="desc-title" data-translate="bacterial-spot-title">3. Bacterial Leaf Spot</h3>
+    <p class="desc-text" data-translate="bacterial-spot-desc">Small water-soaked spots turning brown. Spreads by water splash. Causes leaf holes. Treatment: Copper sprays and good ventilation.</p>
   </div>
 </div>
+
+<script src="translations.js"></script>
+<script src="language.js"></script>
 
 </body>
 </html>
