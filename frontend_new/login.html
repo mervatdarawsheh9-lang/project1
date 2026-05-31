@@ -91,10 +91,22 @@
 <body>
 
     <!-- Simple Navbar to go back home -->
-    <nav class="navbar navbar-light bg-white shadow-sm mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
         <div class="container">
             <a class="navbar-brand fw-bold text-success" href="index.html"> MyPlant <i
                     class="bi bi-leaf-fill text-success"></i></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item ms-3">
+                        <span class="nav-link" data-lang-toggle style="cursor: pointer;">
+                            <i class="bi bi-globe"></i> AR | EN
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -102,49 +114,54 @@
         <div class="auth-container">
             <div class="auth-header">
                 <i class="bi bi-person-circle"></i>
-                <h2>Welcome Back</h2>
-                <p class="text-muted">Please login to your account</p>
+                <h2 data-translate="welcome-back">Welcome Back</h2>
+                <p class="text-muted" data-translate="login-subtitle">Please login to your account</p>
             </div>
 
             <form>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label" data-translate="email-label">Email Address</label>
                     <div class="input-group">
                         <span class="input-group-text bg-light border-end-0"><i
                                 class="bi bi-envelope text-muted"></i></span>
                         <input type="email" class="form-control border-start-0" id="email"
-                            placeholder="name@example.com" required>
+                            data-translate="email-placeholder" placeholder="name@example.com" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label" data-translate="password-label">Password</label>
                     <div class="input-group">
                         <span class="input-group-text bg-light border-end-0"><i
                                 class="bi bi-lock text-muted"></i></span>
                         <input type="password" class="form-control border-start-0" id="password"
-                            placeholder="Enter your password" required>
+                            data-translate="password-placeholder" placeholder="Enter your password" required>
                     </div>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="remember">
-                        <label class="form-check-label text-muted small" for="remember">Remember me</label>
+                        <label class="form-check-label text-muted small" for="remember" data-translate="remember-me">Remember me</label>
                     </div>
-                    <a href="#" class="text-secondary small text-decoration-none">Forgot password?</a>
+                    <a href="#" class="text-secondary small text-decoration-none" data-translate="forgot-password">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="btn btn-success" id="loginBtn">Login</button>
+                <button type="submit" class="btn btn-success" id="loginBtn" data-translate="login-btn">Login</button>
 
                 <div class="auth-footer">
-                    <p class="mb-0 text-muted">Don't have an account? <a href="signup.html">Sign up</a></p>
+                    <p class="mb-0 text-muted"><span data-translate="no-account">Don't have an account?</span> <a href="signup.html" data-translate="signup-link">Sign up</a></p>
                 </div>
             </form>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Translations + Language Switcher -->
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
+
     <script>
         document.querySelector('form').addEventListener('submit', async function (e) {
             e.preventDefault();
