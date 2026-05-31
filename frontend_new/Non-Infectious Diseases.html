@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Non-Infectious Diseases</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 <style>
 body {
   margin: 0;
@@ -107,9 +108,19 @@ h1 {
 </head>
 <body>
 
-<a href="ttt.html" class="back">Back</a>
+<!-- Navbar -->
+<nav style="background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 20px;">
+  <a href="index.html" style="color: #2e7d32; text-decoration: none; font-weight: bold; font-size: 18px; display: flex; align-items: center; gap: 8px;">
+    MyPlant <i class="bi bi-leaf-fill" style="color: #2e7d32;"></i>
+  </a>
+  <a href="javascript:void(0)" data-lang-toggle style="cursor: pointer; color: #2e7d32; text-decoration: none; font-weight: 600;">
+    🌐 AR | EN
+  </a>
+</nav>
 
-<h1>Non-Infectious Diseases</h1>
+<a href="index.html" class="back" data-translate="back-btn">Back</a>
+
+<h1 data-translate="non-infectious-diseases">Non-Infectious Diseases</h1>
 
 <div class="img-container">
   <img src="download (3).webp" class="disease-img" alt="Disease 1">
@@ -122,20 +133,23 @@ h1 {
 
 <div class="descriptions">
   <div class="desc-card">
-    <h3 class="desc-title">1. Nitrogen Deficiency</h3>
-    <p class="desc-text">Yellowing of older leaves starting from tips. Stunted growth and weak stems. Caused by poor soil nitrogen. Treatment: Apply nitrogen-rich fertilizers like urea.</p>
+    <h3 class="desc-title" data-translate="nitrogen-title">1. Nitrogen Deficiency</h3>
+    <p class="desc-text" data-translate="nitrogen-desc">Yellowing of older leaves starting from tips. Stunted growth and weak stems. Caused by poor soil nitrogen. Treatment: Apply nitrogen-rich fertilizers like urea.</p>
   </div>
   
   <div class="desc-card">
-    <h3 class="desc-title">2. Iron Chlorosis</h3>
-    <p class="desc-text">Yellowing between leaf veins on young leaves while veins stay green. Common in alkaline soils. Treatment: Chelated iron sprays or soil acidification.</p>
+    <h3 class="desc-title" data-translate="iron-title">2. Iron Chlorosis</h3>
+    <p class="desc-text" data-translate="iron-desc">Yellowing between leaf veins on young leaves while veins stay green. Common in alkaline soils. Treatment: Chelated iron sprays or soil acidification.</p>
   </div>
   
   <div class="desc-card">
-    <h3 class="desc-title">3. Water Stress (Wilting)</h3>
-    <p class="desc-text">Drooping leaves and stems due to insufficient water or root damage. Leaves may appear dull. Treatment: Proper watering schedule and improve soil drainage.</p>
+    <h3 class="desc-title" data-translate="water-stress-title">3. Water Stress (Wilting)</h3>
+    <p class="desc-text" data-translate="water-stress-desc">Drooping leaves and stems due to insufficient water or root damage. Leaves may appear dull. Treatment: Proper watering schedule and improve soil drainage.</p>
   </div>
 </div>
+
+<script src="translations.js"></script>
+<script src="language.js"></script>
 
 </body>
 </html>
