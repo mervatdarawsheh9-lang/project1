@@ -6,6 +6,7 @@
 <title>Weather & Plant Advice</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
 <style>
 /* Reset default */
@@ -108,17 +109,26 @@ button:hover {
 </head>
 
 <body>
+<nav style="background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+    <a href="index.html" style="color: #2e7d32; text-decoration: none; font-weight: bold; font-size: 18px;">
+        MyPlant <i class="bi bi-leaf-fill" style="color: #2e7d32;"></i>
+    </a>
+    <a href="javascript:void(0)" data-lang-toggle style="cursor: pointer; color: #2e7d32; text-decoration: none; font-weight: 600;">
+        🌐 AR | EN
+    </a>
+</nav>
+
 <div class="container">
-    <h2> Weather & Plant Tips</h2>
+    <h2 data-translate="weather-tips"> Weather & Plant Tips</h2>
 
     <div class="city-input">
-        <input type="text" id="cityName" placeholder="Enter city name">
-        <button onclick="getWeatherByCity()">Get Weather</button>
+        <input type="text" id="cityName" data-translate="enter-city" placeholder="Enter city name">
+        <button onclick="getWeatherByCity()" data-translate="get-weather">Get Weather</button>
     </div>
 
     <div class="weather-info">
         <div class="weather-card">
-            <p id="location">Getting location...</p>
+            <p id="location" data-translate="getting-location">Getting location...</p>
             <p id="temperature"></p>
             <p id="description"></p>
         </div>
@@ -178,5 +188,10 @@ if (navigator.geolocation) {
     document.getElementById("location").innerText = "Browser does not support geolocation";
 }
 </script>
+
+<!-- Translations + Language Switcher -->
+<script src="translations.js"></script>
+<script src="language.js"></script>
+
 </body>
 </html>
