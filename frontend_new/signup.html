@@ -91,10 +91,22 @@
 <body>
 
     <!-- Simple Navbar to go back home -->
-    <nav class="navbar navbar-light bg-white shadow-sm mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
         <div class="container">
             <a class="navbar-brand fw-bold text-success" href="index.html"> MyPlant <i
                     class="bi bi-leaf-fill text-success"></i></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item ms-3">
+                        <span class="nav-link" data-lang-toggle style="cursor: pointer;">
+                            <i class="bi bi-globe"></i> AR | EN
+                        </span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -102,48 +114,48 @@
         <div class="auth-container">
             <div class="auth-header">
                 <i class="bi bi-person-plus-fill"></i>
-                <h2>Create Account</h2>
-                <p class="text-muted">Join the MyPlant community today</p>
+                <h2 data-translate="create-account">Create Account</h2>
+                <p class="text-muted" data-translate="signup-subtitle">Join the MyPlant community today</p>
             </div>
 
             <form>
                 <div class="mb-3">
-                    <label for="fullname" class="form-label">Full Name</label>
+                    <label for="fullname" class="form-label" data-translate="full-name-label">Full Name</label>
                     <div class="input-group">
                         <span class="input-group-text bg-light border-end-0"><i
                                 class="bi bi-person text-muted"></i></span>
-                        <input type="text" class="form-control border-start-0" id="fullname" placeholder="John Doe"
+                        <input type="text" class="form-control border-start-0" id="fullname" data-translate="full-name-placeholder" placeholder="John Doe"
                             required>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label" data-translate="email-label">Email Address</label>
                     <div class="input-group">
                         <span class="input-group-text bg-light border-end-0"><i
                                 class="bi bi-envelope text-muted"></i></span>
                         <input type="email" class="form-control border-start-0" id="email"
-                            placeholder="name@example.com" required>
+                            data-translate="email-placeholder" placeholder="name@example.com" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label" data-translate="password-label">Password</label>
                     <div class="input-group">
                         <span class="input-group-text bg-light border-end-0"><i
                                 class="bi bi-lock text-muted"></i></span>
                         <input type="password" class="form-control border-start-0" id="password"
-                            placeholder="Create a password" required>
+                            data-translate="password-placeholder" placeholder="Create a password" required>
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <label for="confirmPassword" class="form-label" data-translate="confirm-password-label">Confirm Password</label>
                     <div class="input-group">
                         <span class="input-group-text bg-light border-end-0"><i
                                 class="bi bi-lock-fill text-muted"></i></span>
                         <input type="password" class="form-control border-start-0" id="confirmPassword"
-                            placeholder="Confirm your password" required>
+                            data-translate="confirm-password-placeholder" placeholder="Confirm your password" required>
                     </div>
                 </div>
 
@@ -157,16 +169,21 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-success" id="signupBtn">Sign Up</button>
+                <button type="submit" class="btn btn-success" id="signupBtn" data-translate="signup-btn">Sign Up</button>
 
                 <div class="auth-footer">
-                    <p class="mb-0 text-muted">Already have an account? <a href="login.html">Login</a></p>
+                    <p class="mb-0 text-muted"><span data-translate="have-account">Already have an account?</span> <a href="login.html" data-translate="login-btn">Login</a></p>
                 </div>
             </form>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Translations + Language Switcher -->
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
+
     <script>
         document.querySelector('form').addEventListener('submit', async function (e) {
             e.preventDefault();
