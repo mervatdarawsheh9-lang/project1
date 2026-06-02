@@ -226,7 +226,8 @@ class Server {
             res.redirect('/login.html');
         });
 
-        this.app.use(express.static(path.join(__dirname, '../Frontend')));
+       // this.app.use(express.static(path.join(__dirname, '../Frontend')));
+        this.app.use(express.static(path.join(__dirname, '../frontend_new')));
         this.app.use('/uploads', express.static(this.uploadsDir));
     }
 
