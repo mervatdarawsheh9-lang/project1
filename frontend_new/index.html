@@ -80,7 +80,7 @@
 .community-title {
   font-weight: 800;
   color: #1f2d1f;
-  font-size: 30px;
+  font-size: 36px;
   letter-spacing: 1px;
 }
 
@@ -110,7 +110,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
@@ -208,16 +208,6 @@
     padding: 22px;
   }
 }
-.content-section {
-  display: flex;
-  justify-content: center;
-}
-
-.community-form-card {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
-}
 
   </style>
 </head>
@@ -233,17 +223,18 @@
       </button>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home" data-translate="nav-home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#plants" data-translate="nav-plants">Plants</a></li>
-          <li class="nav-item"><a class="nav-link" href="#diseases" data-translate="nav-diseases">Diseases</a></li>
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#plants">Plants</a></li>
+          <li class="nav-item"><a class="nav-link" href="#diseases">Diseases</a></li>
           <li class="nav-item">
-             <a class="nav-link" href="community.html" data-translate="nav-community">Community</a>
+             <a class="nav-link" href="community.html">Community</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="#about" data-translate="nav-about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
 
 
           <li class="nav-item ms-3">
-            <span class="nav-link" data-lang-toggle style="cursor: pointer;">
+            <span class="nav-link">
               <i class="bi bi-globe"></i> AR | EN
             </span>
           </li>
@@ -256,13 +247,13 @@
   <!-- Home -->
   <section id="home" class="home d-flex align-items-center text-center">
     <div class="container">
-      <h1 class="fw-bold" data-translate="welcome-title">Welcome to the world of plants!</h1>
-      <p class="lead" data-translate="welcome-subtitle">An all-in-one platform to identify plants, explore their varieties, and their care </p>
+      <h1 class="fw-bold">Welcome to the world of plants!</h1>
+      <p class="lead">An all-in-one platform to identify plants, explore their varieties, and their care </p>
       <div class="input-group w-50 mx-auto">
         <span class="input-group-text">
           <i class="bi bi-search text-secondary"></i>
         </span>
-        <input id="searchInput" type="text" class="form-control" data-translate="search-placeholder" placeholder="Search for a plant..."
+        <input id="searchInput" type="text" class="form-control" placeholder="Search for a plant..."
           onkeyup="searchPlant()">
       </div>
     </div>
@@ -271,15 +262,15 @@
 
   <section class="py-5 text-center">
     <div class="container">
-      <h2 class="section-title" data-translate="special-title">What Makes MyPlant Special</h2>
+      <h2 class="section-title">What Makes MyPlant Special</h2>
       <div class="row g-4 justify-content-center">
         <!-- Reminder System  -->
         <div class="col-md-4">
           <a href="reminder.html" class="text-decoration-none text-dark">
             <div class="card shadow-sm h-100 feature-card">
               <div class="card-body">
-                <h5><i class="bi bi-clock-fill"></i> <span data-translate="care-time-title">Care Time</span></h5>
-                <p data-translate="care-time-desc">Set reminders for watering, and receive timely notifications for your plants to stay healthy.</p>
+                <h5><i class="bi bi-clock-fill"></i> Care Time</h5>
+                <p>Set reminders for watering, and receive timely notifications for your plants to stay healthy.</p>
               </div>
             </div>
           </a>
@@ -290,8 +281,21 @@
           <a href="plantAi.html" class="plant-id-link">
             <div class="card shadow-sm h-100 feature-card">
               <div class="card-body">
-                <h5><i class="bi bi-camera"></i> <span data-translate="plant-id-title">Plant Identification</span></h5>
-                <p data-translate="plant-id-desc">Not sure what plant it is? Use AI to identify it quickly and get information about it</p>
+                <h5><i class="bi bi-camera"></i> Plant Identification</h5>
+                <p>Not sure what plant it is? Use AI to identify it quickly and get information about it</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+        <!-- Feedback -->
+        <div class="col-md-4">
+          <a href="feedback.html" class="text-decoration-none text-dark">
+            <div class="card shadow-sm h-100 feature-card">
+              <div class="card-body">
+                <h5><i class="bi bi-chat-left-text-fill"></i> Feedback</h5>
+                <p>Send complaints or suggestions so the admin can review user issues and improve the platform.</p>
               </div>
             </div>
           </a>
@@ -303,8 +307,8 @@
 
           <div class="card shadow-sm h-100 feature-card">
             <div class="card-body">
-              <h5><i class="bi bi-cloud-fill"></i> <span data-translate="weather-title">Weather</span></h5>
-              <p data-translate="weather-desc">Check the weather near you to adjust watering and care routines , especially on hot, rainy, or windy
+              <h5><i class="bi bi-cloud-fill"></i> Weather</h5>
+              <p>Check the weather near you to adjust watering and care routines , especially on hot, rainy, or windy
                 days.</p>
             </div>
           </div>
@@ -322,8 +326,9 @@
 
       <div class="card shadow-sm h-100 feature-card">
         <div class="card-body">
-          <h5><i class="bi bi-shop"></i> <span data-translate="nursery-title">Plant Nursery</span></h5>
-          <p data-translate="nursery-desc">
+          <h5><i class="bi bi-shop"></i> Plant Nursery</h5>
+
+          <p>
             Find nearby plant nurseries across Jordan and discover
             the nearest nursery to your location.
           </p>
@@ -338,7 +343,7 @@
   <!-- Plants -->
   <section id="plants" class="plants-section py-5">
     <div class="container">
-      <h2 class="section-title text-center" data-translate="explore-plants">Explore The Plants</h2>
+      <h2 class="section-title text-center">Explore The Plants</h2>
 
       <div class="row g-4" id="plantList">
 
@@ -375,7 +380,7 @@
       </div>
       <div class="text-end mt-4">
         <a href="#" class="text-decoration-none text-dark fw-bold more-link">
-          <span data-translate="see-more-plants">See more plants</span>
+          See more plants
           <i class="bi bi-arrow-right-circle-fill ms-2 text-success fs-4"></i>
         </a>
       </div>
@@ -386,15 +391,15 @@
   <!-- Diseases -->
   <section id="diseases" class="py-5">
     <div class="container text-center">
-      <h2 class="section-title" data-translate="plant-diseases">Plant Diseases</h2>
+      <h2 class="section-title">Plant Diseases</h2>
       <div class="row g-4">
 
         <div class="col-md-6">
           <a href="Infectious Diseases.html" class="plant-id-link">
             <div class="card h-100 shadow-sm feature-card">
               <div class="card-body">
-                <h5><i class="bi bi-virus"></i> <span data-translate="infectious-diseases">Infectious Diseases</span></h5>
-                <p data-translate="infectious-desc">
+                <h5><i class="bi bi-virus"></i> Infectious Diseases</h5>
+                <p>
                   Caused by bacteria, fungi or viruses.<br>
                 </p>
               </div>
@@ -406,8 +411,8 @@
           <a href="Non-Infectious Diseases.html" class="plant-id-link">
             <div class="card h-100 shadow-sm feature-card">
               <div class="card-body">
-                <h5><i class="bi bi-exclamation-circle-fill"></i> <span data-translate="non-infectious-diseases">Non-Infectious Diseases</span></h5>
-                <p data-translate="non-infectious-desc">
+                <h5><i class="bi bi-exclamation-circle-fill"></i> Non-Infectious Diseases</h5>
+                <p>
                   Caused by environment or nutrition issues.<br>
                 </p>
               </div>
@@ -432,15 +437,54 @@
       <h2 class="community-title mt-3">Join Our Plant Community</h2>
 
       <p class="community-subtitle">
-        Ask plant care questions, describe your plant problem, and contact agricultural support directly through WhatsApp
+        Connect with plant lovers, ask questions, share your plant problems,
+        and get support through WhatsApp.
       </p>
     </div>
 
-   <div class="row g-4 align-items-stretch justify-content-center">
-      
-      <div class="col-lg-7 col-md-10 mx-auto">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-5">
+        <div class="community-info-card h-100">
+          <div class="community-icon">
+            <i class="bi bi-whatsapp"></i>
+          </div>
+
+          <h3>Grow Together 🌿</h3>
+
+          <p>
+            Our community helps users discuss plant care, diseases,
+            watering schedules, sunlight needs, and daily plant tips.
+          </p>
+
+          <div class="community-feature">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Ask about plant diseases and care tips</span>
+          </div>
+
+          <div class="community-feature">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Share your plant photos with others</span>
+          </div>
+
+          <div class="community-feature">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Get help directly through WhatsApp</span>
+          </div>
+
+          <a 
+            href="https://chat.whatsapp.com/LKi8ZYCj5CnLATSdWQ9Awg"
+            target="_blank"
+            class="community-whatsapp-btn"
+          >
+            <i class="bi bi-whatsapp"></i>
+            Join WhatsApp Group
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
         <div class="community-form-card h-100">
-          <h3>Ask an Agricultural Expert</h3>
+          <h3>Contact Community Admin</h3>
           <p class="form-note">
             Fill the form and send your question directly on WhatsApp.
           </p>
@@ -501,8 +545,8 @@
   <!-- About -->
   <section id="about" class="py-5 bg-light text-center">
     <div class="container">
-      <h2 class="section-title" data-translate="about-title">About MyPlant</h2>
-      <p data-translate="about-text">
+      <h2 class="section-title">About MyPlant</h2>
+      <p>
         MyPlant is a simple and user-friendly platform designed to help plant lovers identify plants, understand their
         diseases, and learn the best care practices.
         Our goal is to make plant care easier by providing useful information such as plant identification,
@@ -515,16 +559,12 @@
 
   <!-- Footer -->
   <footer class="text-center py-4">
-    <p class="mb-1" data-translate="footer-text"> MyPlant – Botanist in your pocket</p>
-    <small data-translate="footer-copyright">© 2025 MyPlant . All rights reserved</small>
+    <p class="mb-1"> MyPlant – Botanist in your pocket</p>
+    <small>© 2025 MyPlant . All rights reserved</small>
   </footer>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Translations + Language Switcher -->
-  <script src="translations.js"></script>
-  <script src="language.js"></script>
 
   <script>
     function searchPlant() {
@@ -535,32 +575,32 @@
         let text = plants[i].innerText.toLowerCase();
         plants[i].style.display = text.includes(input) ? "block" : "none";
       }
+
+     function sendCommunityWhatsApp() {
+    var name = document.getElementById("communityName").value.trim();
+    var plant = document.getElementById("communityPlant").value.trim();
+    var problem = document.getElementById("communityProblem").value;
+    var message = document.getElementById("communityMessage").value.trim();
+
+    if (name === "" || plant === "" || problem === "" || message === "") {
+      alert("Please fill all community fields");
+      return;
     }
 
-    function sendCommunityWhatsApp() {
-      var name = document.getElementById("communityName").value.trim();
-      var plant = document.getElementById("communityPlant").value.trim();
-      var problem = document.getElementById("communityProblem").value;
-      var message = document.getElementById("communityMessage").value.trim();
+    var phoneNumber = "962789666693";
 
-      if (name === "" || plant === "" || problem === "" || message === "") {
-        alert("Please fill all community fields");
-        return;
-      }
+    var whatsappMessage =
+      "Hello Plant Community Admin,%0A%0A" +
+      "Name: " + encodeURIComponent(name) + "%0A" +
+      "Plant Type: " + encodeURIComponent(plant) + "%0A" +
+      "Problem Type: " + encodeURIComponent(problem) + "%0A%0A" +
+      "Message:%0A" + encodeURIComponent(message);
 
-      var phoneNumber = "962789666693";
+    var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
 
-      var whatsappMessage =
-        "Hello Plant Community Admin,%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Plant Type: " + encodeURIComponent(plant) + "%0A" +
-        "Problem Type: " + encodeURIComponent(problem) + "%0A%0A" +
-        "Message:%0A" + encodeURIComponent(message);
-
-      var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
-
-      window.open(whatsappURL, "_blank");
-    }
+    window.open(whatsappURL, "_blank");
+  }
+}
   </script>
 
 </body>
